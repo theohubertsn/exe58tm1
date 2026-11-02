@@ -1,0 +1,19 @@
+﻿58TM1 Infrastructure Toolkit — 0.2.0 pilote
+
+Lancer 58TM1.exe normalement dans la session de l’utilisateur concerné.
+Choisir Auto / RDS / RDS + FSLogix, l’action et les options.
+Simulation est cochée par défaut ; la décocher pour appliquer.
+Les actions administrateur demandent l’UAC. Aucun module à télécharger.
+
+Prérequis : Windows x64 avec interface graphique, .NET Framework 4.8,
+Windows PowerShell 5.1. Les stratégies de signature restent applicables.
+EXE et scripts non signés. Lire docs/DESKTOP.md pour la distribution interne.
+
+Binaire compilé et vérifié sous Linux ; 28 tests du moteur et 50 contrôles
+Desktop passent. L’affichage, l’UAC et les réparations Windows/RDS n’ont pas
+été exécutés ici. Valider sur votre hôte pilote avant généralisation.
+
+Les sources C# sont dans desktop/. Compilation :
+  .\desktop\Build-Desktop.ps1
+Vérifier le binaire de cette archive avec PowerShell 7 :
+  pwsh -NoProfile -File .\tests\Test-Desktop.ps1 -Executable .\58TM1.exe
